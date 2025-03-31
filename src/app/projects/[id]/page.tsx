@@ -11,7 +11,7 @@ export async function generateMetadata({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { id } = await params
   const project = projectListMockApi.find(
-    (project) => String(project.id) === id
+    (project) => slugify(project?.title) == id
   )
 
   if (!project) {
